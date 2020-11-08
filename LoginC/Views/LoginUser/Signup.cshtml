@@ -1,0 +1,59 @@
+﻿@model LoginC.Models.Login
+
+@{
+    ViewBag.Title = "SubmitData";
+}
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Signup</title>
+</head>
+<body>
+    @using (Html.BeginForm("SubmitData", "Loginuser"))
+    {
+        @Html.ValidationSummary(true)
+        {
+
+            <fieldset>
+                <legend> Register</legend>
+                <div class="editor">
+                    @Html.LabelFor(model => model.rname)
+                    @Html.TextBoxFor(model => model.rname)
+                    @Html.ValidationMessageFor(model => model.rname)
+
+                </div>
+
+                <div class="editor">
+                    @Html.LabelFor(model => model.remailid)
+                    @Html.TextBoxFor(model => model.remailid)
+                    @Html.ValidationMessageFor(model => model.remailid)
+
+                </div>
+                <div class="editor">
+                    @Html.LabelFor(model => model.Userpassword)
+
+                    @Html.PasswordFor(Model => Model.Userpassword)
+                    @Html.ValidationMessageFor(model => model.Userpassword)
+
+                </div>
+                <div class="editor">
+                    @Html.LabelFor(model => model.c_pwd)
+
+                    @Html.PasswordFor(Model => Model.c_pwd)
+                    @Html.ValidationMessageFor(model => model.c_pwd)
+
+                </div>
+                <div class="editor">
+                    <input type="submit" value="create" />
+                </div>
+
+                @Html.ActionLink("login", "login");
+
+            </fieldset>
+        }
+    }
+
+</body>
+</html>  

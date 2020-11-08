@@ -1,0 +1,38 @@
+﻿@model LoginC.Models.Login
+
+@{
+    ViewBag.Title = "login";
+    //Layout = "~/Views/_ViewStart.cshtml";
+}
+
+<h2>login</h2>
+@using (Html.BeginForm("Loginsearch", "Loginuser"))
+{
+    @Html.ValidationSummary(true)
+    {
+        <fieldset>
+            <legend>Login</legend>
+
+            <div class="editor">
+                @Html.LabelFor(model => model.remailid)
+                <br />
+                @Html.TextBoxFor(model => model.remailid)
+                @Html.ValidationMessageFor(model => model.remailid)
+
+            </div>
+           
+            <div class="editor">
+                @Html.LabelFor(model => model.Userpassword)
+                <br />
+                @Html.PasswordFor(Model => Model.Userpassword)
+
+                @Html.ValidationMessageFor(model => model.Userpassword)
+
+            </div>
+
+            <input type="submit" value="login" />
+            @ViewBag.data
+        </fieldset>
+    }
+
+}  
